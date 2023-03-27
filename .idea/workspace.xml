@@ -5,23 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0fd25ec-5f9d-42c1-8a71-88942869b7c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_electronwill_night_config_core_3_6_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_electronwill_night_config_toml_3_6_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_flywaydb_flyway_core_9_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manger-backend/src/main/java/com/huoxiaolu/manger/mangerbackend/api/interfaces/ReceiptApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manger-backend/src/main/java/com/huoxiaolu/manger/mangerbackend/api/interfaces/UserApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manger-backend/src/main/java/com/huoxiaolu/manger/mangerbackend/application/controller/ReceiptApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manger-backend/src/main/java/com/huoxiaolu/manger/mangerbackend/application/controller/UserApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manger-backend/src/main/java/com/huoxiaolu/manger/mangerbackend/shared/constant/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manger-backend/src/main/java/com/huoxiaolu/manger/mangerbackend/shared/enums/receipt/ReceiptErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manger-backend/src/main/java/com/huoxiaolu/manger/mangerbackend/shared/enums/receipt/ReceiptStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manger-backend/src/main/java/com/huoxiaolu/manger/mangerbackend/shared/exceptions/BaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manger-backend/src/main/resources/db/migration/V20230322212014__create_user_account_info.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_5_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jdbc_3_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_3_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_3_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jdbc_3_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_relational_3_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_6_0_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_6_0_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6d71f03b-1c36-4b73-af9a-addf4973d0fb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6d71f03b-1c36-4b73-af9a-addf4973d0fb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manger-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/manger-backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/manger-backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/manger-backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-backend/src/main/resources/db/migration/V20230322212014__create_user_account_info.sql" beforeDir="false" afterPath="$PROJECT_DIR$/manger-backend/src/main/resources/db/migration/V20230322212014__create_user_account_info.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +64,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -77,25 +80,19 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3417367" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/manger-backend/src/main/resources/db/migration" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MangerBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="manger-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.huoxiaolu.manger.mangerbackend.MangerBackendApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,7 +107,8 @@
       <option name="presentableId" value="Default" />
       <updated>1679401181107</updated>
       <workItem from="1679401185429" duration="4072000" />
-      <workItem from="1679409458219" duration="4197000" />
+      <workItem from="1679409458219" duration="4444000" />
+      <workItem from="1679900763430" duration="5474000" />
     </task>
     <servers />
   </component>
