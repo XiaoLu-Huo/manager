@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huoxiaolu.manger.mangerbackend.infrastructure.repository.query.mapper.UserMapper">
+
+    <select id="pageUserInfoList"
+            resultType="com.huoxiaolu.manger.mangerbackend.api.response.UserListResponse">
+        select
+        t1.name,
+        t1.code,
+        t1.phone_number,
+        t1.id_card
+        from user_info t1
+        <where>
+            <if test="name != null and name.trim().length() > 0">
+                <bind name="name" value="'%' + name + '%'"/>
+                and t1.name like #{name}
+            </if>
+        </where>
+    </select>
+</mapper>

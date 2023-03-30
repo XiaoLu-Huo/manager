@@ -1,0 +1,1 @@
+alter table test.user_info change Id_card id_card varchar(100) null comment '身份证号码';

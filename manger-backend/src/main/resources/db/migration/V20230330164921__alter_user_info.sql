@@ -1,0 +1,1 @@
+alter table user_info modify update_by varchar(30) null comment '更新人';
