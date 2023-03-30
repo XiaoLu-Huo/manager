@@ -21,19 +21,13 @@ import org.springframework.transaction.annotation.Transactional;
  * @author xiaolu.huo
  */
 @Service
+@AllArgsConstructor
 public class UserServiceImpl implements UserService {
 
     private final QueryUserRepository queryUserRepository;
     private final SerialNoService serialNoService;
     private final UserInfoConverter userInfoConverter;
     private final UserInfoDomainRepository userInfoDomainRepository;
-
-    public UserServiceImpl(QueryUserRepository queryUserRepository, SerialNoService serialNoService, UserInfoConverter userInfoConverter, UserInfoDomainRepository userInfoDomainRepository) {
-        this.queryUserRepository = queryUserRepository;
-        this.serialNoService = serialNoService;
-        this.userInfoConverter = userInfoConverter;
-        this.userInfoDomainRepository = userInfoDomainRepository;
-    }
 
     @Override
     public PageInfo<UserListResponse> queryUserList(UserQueryRequest request) {

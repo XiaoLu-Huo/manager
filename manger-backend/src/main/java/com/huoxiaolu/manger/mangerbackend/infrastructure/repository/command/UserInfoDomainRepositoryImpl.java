@@ -5,21 +5,18 @@ import com.huoxiaolu.manger.mangerbackend.domain.repository.UserInfoDomainReposi
 import com.huoxiaolu.manger.mangerbackend.infrastructure.dataobject.persist.UserInfoDO;
 import com.huoxiaolu.manger.mangerbackend.infrastructure.repository.command.converter.UserInfoDoConverter;
 import com.huoxiaolu.manger.mangerbackend.infrastructure.repository.command.jdbc.UserInfoRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 /**
  * @author xiaolu.huo
  */
 @Repository
+@AllArgsConstructor
 public class UserInfoDomainRepositoryImpl implements UserInfoDomainRepository {
 
     private final UserInfoDoConverter userInfoDOConverter;
     private final UserInfoRepository userInfoRepository;
-
-    public UserInfoDomainRepositoryImpl(UserInfoDoConverter userInfoDOConverter, UserInfoRepository userInfoRepository) {
-        this.userInfoDOConverter = userInfoDOConverter;
-        this.userInfoRepository = userInfoRepository;
-    }
 
     @Override
     public UserInfo save(UserInfo userInfo) {
