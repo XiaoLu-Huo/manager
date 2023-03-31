@@ -1,5 +1,6 @@
 package com.huoxiaolu.manger.mangerbackend.domain.aggregate;
 
+import com.huoxiaolu.manger.mangerbackend.api.request.UserUpdateRequest;
 import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,5 +33,14 @@ public class UserInfo {
         this.updateBy = SYSTEM;
         this.createTime = now;
         this.updateTime = now;
+    }
+
+    public void update(UserUpdateRequest userUpdateRequest) {
+        this.name = userUpdateRequest.getName();
+        this.address = userUpdateRequest.getAddress();
+        this.idCard = userUpdateRequest.getIdCard();
+        this.phoneNumber = userUpdateRequest.getPhoneNumber();
+        this.updateBy = SYSTEM;
+        this.updateTime = LocalDateTime.now();
     }
 }

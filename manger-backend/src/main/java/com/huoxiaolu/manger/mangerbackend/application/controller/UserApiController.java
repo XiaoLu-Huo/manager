@@ -4,6 +4,8 @@ import com.github.pagehelper.PageInfo;
 import com.huoxiaolu.manger.mangerbackend.api.interfaces.UserApi;
 import com.huoxiaolu.manger.mangerbackend.api.request.UserCreateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.request.UserQueryRequest;
+import com.huoxiaolu.manger.mangerbackend.api.request.UserUpdateRequest;
+import com.huoxiaolu.manger.mangerbackend.api.response.UserInfoResponse;
 import com.huoxiaolu.manger.mangerbackend.api.response.UserListResponse;
 import com.huoxiaolu.manger.mangerbackend.application.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -21,12 +23,17 @@ public class UserApiController implements UserApi {
     private final UserService userService;
 
     @Override
-    public String createUser(UserCreateRequest request) {
+    public UserInfoResponse createUser(UserCreateRequest request) {
         return userService.createUser(request);
     }
 
     @Override
     public PageInfo<UserListResponse> queryUserList(UserQueryRequest request) {
         return userService.queryUserList(request);
+    }
+
+    @Override
+    public UserInfoResponse updateUserInfo(UserUpdateRequest request) {
+        return userService.updateUserInfo(request);
     }
 }

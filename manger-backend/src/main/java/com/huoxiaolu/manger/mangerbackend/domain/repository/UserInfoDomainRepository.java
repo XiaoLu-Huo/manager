@@ -12,4 +12,11 @@ public interface UserInfoDomainRepository {
      * @return userInfo
      */
     UserInfo save(UserInfo userInfo);
+
+    /**
+     * 根据id查找用户信息
+     * @param id 用户id
+     * @return userInfo
+     */
+    UserInfo findUserInfoById(Long id);
 }

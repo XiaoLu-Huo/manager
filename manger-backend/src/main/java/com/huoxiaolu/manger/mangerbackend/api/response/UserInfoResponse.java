@@ -8,11 +8,10 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class UserListResponse {
-    private Long   id;
+public class UserInfoResponse {
+    private Long id;
     private String code;
     private String name;
     private String phoneNumber;
     private String idCard;
-
 }

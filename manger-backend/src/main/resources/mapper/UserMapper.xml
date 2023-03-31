@@ -7,6 +7,7 @@
     <select id="pageUserInfoList"
             resultType="com.huoxiaolu.manger.mangerbackend.api.response.UserListResponse">
         select
+        t1.id
         t1.name,
         t1.code,
         t1.phone_number,

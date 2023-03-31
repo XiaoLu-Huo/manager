@@ -3,6 +3,8 @@ package com.huoxiaolu.manger.mangerbackend.application.service.impl;
 import com.github.pagehelper.PageInfo;
 import com.huoxiaolu.manger.mangerbackend.api.request.UserCreateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.request.UserQueryRequest;
+import com.huoxiaolu.manger.mangerbackend.api.request.UserUpdateRequest;
+import com.huoxiaolu.manger.mangerbackend.api.response.UserInfoResponse;
 import com.huoxiaolu.manger.mangerbackend.api.response.UserListResponse;
 import com.huoxiaolu.manger.mangerbackend.application.converter.UserInfoConverter;
 import com.huoxiaolu.manger.mangerbackend.application.repository.QueryUserRepository;
@@ -12,8 +14,6 @@ import com.huoxiaolu.manger.mangerbackend.domain.aggregate.UserInfo;
 import com.huoxiaolu.manger.mangerbackend.domain.repository.UserInfoDomainRepository;
 import com.huoxiaolu.manger.mangerbackend.shared.enums.SerialNoType;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,10 +36,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = Throwable.class)
-    public String createUser(UserCreateRequest request) {
+    public UserInfoResponse createUser(UserCreateRequest request) {
         String code = serialNoService.generate(SerialNoType.USER);
         UserInfo userInfo = userInfoConverter.requestToUserInfo(request, code);
         userInfo.initInfo();
-        return userInfoDomainRepository.save(userInfo).getCode();
+        UserInfo savedUserInfo = userInfoDomainRepository.save(userInfo);
+        return userInfoConverter.userInfoToResponse(savedUserInfo);
+    }
+
+    @Override
+    public UserInfoResponse updateUserInfo(UserUpdateRequest request) {
+        UserInfo userInfo = userInfoDomainRepository.findUserInfoById(request.getId());
+        userInfo.update(request);
+        UserInfo savedUserInfo = userInfoDomainRepository.save(userInfo);
+        return userInfoConverter.userInfoToResponse(savedUserInfo);
     }
 }
