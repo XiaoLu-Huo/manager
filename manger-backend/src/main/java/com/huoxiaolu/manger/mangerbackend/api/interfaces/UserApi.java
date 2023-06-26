@@ -1,6 +1,5 @@
 package com.huoxiaolu.manger.mangerbackend.api.interfaces;
 
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.huoxiaolu.manger.mangerbackend.api.request.UserCreateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.request.UserQueryRequest;
@@ -11,7 +10,6 @@ import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @author xiaolu.huo
@@ -32,7 +30,6 @@ public interface UserApi {
      */
     @GetMapping("/user/list")
     PageInfo<UserListResponse> queryUserList(@RequestBody UserQueryRequest request);
-    // 更新用户信息
 
     /**
      * 更新用户信息
@@ -41,5 +38,5 @@ public interface UserApi {
      */
     @PostMapping("/user/update")
     UserInfoResponse updateUserInfo(@Valid @RequestBody UserUpdateRequest request);
-    // 删除用户信息
+
 }

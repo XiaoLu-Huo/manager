@@ -1,5 +1,6 @@
 package com.huoxiaolu.manger.mangerbackend.infrastructure.dataobject.persist;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,15 +14,17 @@ import org.springframework.data.relational.core.mapping.Table;
 @Getter
 @Setter
 @ToString
-@Table("user_info")
-public class UserInfoDO {
+@Table("receipt")
+public class ReceiptInfoDO {
     @Id
     private Long id;
     private String code;
-    private String name;
-    private String phoneNumber;
-    private String address;
+    private String userName;
     private String idCard;
+    private BigDecimal amount;
+    private LocalDateTime startTime;
+    private Integer term;
+    private LocalDateTime endTime;
     private LocalDateTime createTime;
     private String createBy;
     private LocalDateTime updateTime;
