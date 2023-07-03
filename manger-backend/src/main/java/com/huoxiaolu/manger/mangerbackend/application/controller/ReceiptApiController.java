@@ -1,7 +1,10 @@
 package com.huoxiaolu.manger.mangerbackend.application.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.huoxiaolu.manger.mangerbackend.api.interfaces.ReceiptApi;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptCreateRequest;
+import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptQueryRequest;
+import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptListResponse;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptResponse;
 import com.huoxiaolu.manger.mangerbackend.application.service.ReceiptService;
 import lombok.RequiredArgsConstructor;
@@ -21,5 +24,10 @@ public class ReceiptApiController implements ReceiptApi {
     @Override
     public ReceiptResponse createReceipt(ReceiptCreateRequest request) {
         return receiptService.createReceipt(request);
+    }
+
+    @Override
+    public PageInfo<ReceiptListResponse> queryReceiptList(ReceiptQueryRequest request) {
+        return receiptService.queryReceiptList(request);
     }
 }

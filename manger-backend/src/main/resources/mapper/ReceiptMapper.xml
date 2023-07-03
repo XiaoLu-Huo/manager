@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huoxiaolu.manger.mangerbackend.infrastructure.repository.query.mapper.ReceiptMapper">
+
+    <select id="pageReceiptInfoList"
+            resultType="com.huoxiaolu.manger.mangerbackend.api.response.ReceiptListResponse">
+        select
+        t1.id,
+        t1.user_name as name,
+        t1.code,
+        t1.amount,
+        t1.start_time as startTime,
+        t1.end_time as endTime,
+        t1.id_card,
+        t1.term
+        from receipt t1
+        <where>
+            <if test="name != null and name.trim().length() > 0">
+                <bind name="name" value="'%' + name + '%'"/>
+                and t1.user_name like #{name}
+            </if>
+            <if test="idCard != null and idCard.trim().length() > 0">
+                and t1.id_card = #{idCard}
+            </if>
+            <if test="endTimeFrom != null">
+                and t1.end_time &gt; #{endTimeFrom}
+            </if>
+            <if test="endTimeTo != null">
+                and t1.end_time &lt; #{endTimeTo}
+            </if>
+        </where>
+    </select>
+
+</mapper>

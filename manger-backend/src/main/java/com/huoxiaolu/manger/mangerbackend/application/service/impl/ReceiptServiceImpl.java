@@ -1,8 +1,12 @@
 package com.huoxiaolu.manger.mangerbackend.application.service.impl;
 
+import com.github.pagehelper.PageInfo;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptCreateRequest;
+import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptQueryRequest;
+import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptListResponse;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptResponse;
 import com.huoxiaolu.manger.mangerbackend.application.converter.ReceiptInfoConverter;
+import com.huoxiaolu.manger.mangerbackend.application.repository.QueryReceiptRepository;
 import com.huoxiaolu.manger.mangerbackend.application.service.ReceiptService;
 import com.huoxiaolu.manger.mangerbackend.application.service.SerialNoService;
 import com.huoxiaolu.manger.mangerbackend.domain.aggregate.ReceiptInfo;
@@ -21,6 +25,7 @@ public class ReceiptServiceImpl implements ReceiptService {
     private final SerialNoService serialNoService;
     private final ReceiptInfoConverter receiptInfoConverter;
     private final ReceiptDomainRepository receiptDomainRepository;
+    private final QueryReceiptRepository queryReceiptRepository;
 
     @Override
     public ReceiptResponse createReceipt(ReceiptCreateRequest request) {
@@ -31,5 +36,10 @@ public class ReceiptServiceImpl implements ReceiptService {
         return ReceiptResponse.builder()
             .code(savedReceiptInfo.getCode())
             .build();
+    }
+
+    @Override
+    public PageInfo<ReceiptListResponse> queryReceiptList(ReceiptQueryRequest request) {
+        return queryReceiptRepository.queryReceiptList(request);
     }
 }
