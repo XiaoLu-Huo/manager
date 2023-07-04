@@ -1,5 +1,6 @@
 package com.huoxiaolu.manger.mangerbackend.api.response;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import lombok.Getter;
@@ -17,7 +18,9 @@ public class ReceiptListResponse {
     private String term;
     private BigDecimal amount;
     private String idCard;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime startTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime endTime;
 
 

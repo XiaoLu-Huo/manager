@@ -7,6 +7,7 @@ import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptQueryRequest;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptListResponse;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptResponse;
 import com.huoxiaolu.manger.mangerbackend.application.service.ReceiptService;
+import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,4 +31,5 @@ public class ReceiptApiController implements ReceiptApi {
     public PageInfo<ReceiptListResponse> queryReceiptList(ReceiptQueryRequest request) {
         return receiptService.queryReceiptList(request);
     }
+
 }

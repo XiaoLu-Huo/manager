@@ -1,11 +1,14 @@
 package com.huoxiaolu.manger.mangerbackend.api.interfaces;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.github.pagehelper.PageInfo;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptCreateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptQueryRequest;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptListResponse;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptResponse;
 import jakarta.validation.Valid;
+import java.time.LocalDateTime;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,10 +27,9 @@ public interface ReceiptApi {
 
     /**
      * 分页查询存单列表
-     * @param request 分页查询参数(身份证号码、姓名、存款结束日期区间)
      * @return 查询的结果(姓名、身份证号码、存款开始时间、结束时间、金额)
      */
-    @GetMapping("/receipt/list")
+    @PostMapping("/receipt/list")
     PageInfo<ReceiptListResponse> queryReceiptList(@RequestBody ReceiptQueryRequest request);
 
 
