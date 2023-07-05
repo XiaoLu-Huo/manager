@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.github.pagehelper.PageInfo;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptCreateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptQueryRequest;
+import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptUpdateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptListResponse;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptResponse;
 import jakarta.validation.Valid;
@@ -33,13 +34,13 @@ public interface ReceiptApi {
     PageInfo<ReceiptListResponse> queryReceiptList(@RequestBody ReceiptQueryRequest request);
 
 
-//    /**
-//     * 更新用户信息
-//     * @param request 更新用户信息的参数
-//     * @return 用户信息
-//     */
-//    @PostMapping("/receipt/update")
-//    UserInfoResponse updateReceipt(@Valid @RequestBody UserUpdateRequest request);
+    /**
+     * 更新用户信息
+     * @param request 更新存单信息的参数
+     * @return 存单单号
+     */
+    @PostMapping("/receipt/update")
+    ReceiptResponse updateReceipt(@Valid @RequestBody ReceiptUpdateRequest request);
     // 创建一个存款单
     // 查询存款单列表
     // 查询存款单详情

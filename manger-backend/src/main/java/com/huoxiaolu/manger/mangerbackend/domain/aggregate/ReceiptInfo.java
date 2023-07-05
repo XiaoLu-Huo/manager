@@ -1,5 +1,6 @@
 package com.huoxiaolu.manger.mangerbackend.domain.aggregate;
 
+import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptUpdateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.request.UserUpdateRequest;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -38,4 +39,12 @@ public class ReceiptInfo {
         this.updateTime = now;
     }
 
+    public void update(ReceiptUpdateRequest request) {
+        this.idCard = request.getIdCard();
+        this.userName = request.getName();
+        this.amount = request.getAmount();
+        this.startTime = request.getStartTime();
+        this.term = request.getTerm();
+        this.endTime = request.getStartTime().plusMonths(request.getTerm());
+    }
 }

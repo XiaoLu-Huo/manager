@@ -3,6 +3,7 @@ package com.huoxiaolu.manger.mangerbackend.application.service.impl;
 import com.github.pagehelper.PageInfo;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptCreateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptQueryRequest;
+import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptUpdateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptListResponse;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptResponse;
 import com.huoxiaolu.manger.mangerbackend.application.converter.ReceiptInfoConverter;
@@ -41,5 +42,15 @@ public class ReceiptServiceImpl implements ReceiptService {
     @Override
     public PageInfo<ReceiptListResponse> queryReceiptList(ReceiptQueryRequest request) {
         return queryReceiptRepository.queryReceiptList(request);
+    }
+
+    @Override
+    public ReceiptResponse updateReceipt(ReceiptUpdateRequest request) {
+        ReceiptInfo receiptInfo = receiptDomainRepository.findReceiptInfoById(request.getId());
+        receiptInfo.update(request);
+        ReceiptInfo savedReceiptInfo = receiptDomainRepository.save(receiptInfo);
+        return ReceiptResponse.builder()
+            .code(savedReceiptInfo.getCode())
+            .build();
     }
 }

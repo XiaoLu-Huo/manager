@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.huoxiaolu.manger.mangerbackend.api.interfaces.ReceiptApi;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptCreateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptQueryRequest;
+import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptUpdateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptListResponse;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptResponse;
 import com.huoxiaolu.manger.mangerbackend.application.service.ReceiptService;
@@ -30,6 +31,11 @@ public class ReceiptApiController implements ReceiptApi {
     @Override
     public PageInfo<ReceiptListResponse> queryReceiptList(ReceiptQueryRequest request) {
         return receiptService.queryReceiptList(request);
+    }
+
+    @Override
+    public ReceiptResponse updateReceipt(ReceiptUpdateRequest request) {
+        return receiptService.updateReceipt(request);
     }
 
 }

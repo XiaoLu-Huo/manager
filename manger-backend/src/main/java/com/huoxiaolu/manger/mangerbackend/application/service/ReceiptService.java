@@ -3,6 +3,7 @@ package com.huoxiaolu.manger.mangerbackend.application.service;
 import com.github.pagehelper.PageInfo;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptCreateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptQueryRequest;
+import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptUpdateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptListResponse;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptResponse;
 
@@ -14,7 +15,7 @@ public interface ReceiptService {
     /**
      * 创建存款单据
      * @param request 存款单创建信息
-     * @return 存单
+     * @return 存单单号
      */
     ReceiptResponse createReceipt(ReceiptCreateRequest request);
 
@@ -24,4 +25,11 @@ public interface ReceiptService {
    * @return 列表返回结果
    */
   PageInfo<ReceiptListResponse> queryReceiptList(ReceiptQueryRequest request);
+
+  /**
+   * 更新存单信息
+   * @param request 存单信息
+   * @return 存单单号
+   */
+  ReceiptResponse updateReceipt(ReceiptUpdateRequest request);
 }
