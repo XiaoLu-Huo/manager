@@ -28,6 +28,7 @@ public class QueryReceiptRepositoryImpl implements QueryReceiptRepository {
     @Override
     public PageInfo<ReceiptListResponse> queryReceiptList(ReceiptQueryRequest request) {
         Page<ReceiptListResponse> page = startPage(request.getPageNumber(), request.getPageSize())
+            .setOrderBy("code desc")
             .doSelectPage(() -> receiptMapper.pageReceiptInfoList(request));
         return warpPage(page);
     }
