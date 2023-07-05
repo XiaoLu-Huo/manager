@@ -20,7 +20,7 @@ import lombok.Setter;
 public class ReceiptCreateRequest {
     @NotBlank(message = "存款人姓名不能为空")
     @Schema(example = "xxx", description = "存款人")
-    private String userName;
+    private String name;
 
     @NotNull(message = "存款开始时间不能为空")
     @Schema(example = "2021/7/29 11:56:00", description = "存款时间")

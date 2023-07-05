@@ -19,6 +19,7 @@ public interface ReceiptInfoConverter {
      */
     @Mapping(target = "endTime", source = "request", qualifiedByName = "mapToEndTime")
     @Mapping(target = "code", source = "code")
+    @Mapping(target = "userName", source = "request.name")
     ReceiptInfo requestToReceiptInfo(ReceiptCreateRequest request, String code);
 
     @Named("mapToEndTime")
