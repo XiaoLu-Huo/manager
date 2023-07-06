@@ -45,6 +45,7 @@ public class ReceiptInfo {
         this.amount = request.getAmount();
         this.startTime = request.getStartTime();
         this.term = request.getTerm();
-        this.endTime = request.getStartTime().plusMonths(request.getTerm());
+        this.endTime = request.getStartTime().plusMonths(request.getTerm()).toLocalDate().atTime(23,59,59);
+        this.updateTime = LocalDateTime.now();
     }
 }
