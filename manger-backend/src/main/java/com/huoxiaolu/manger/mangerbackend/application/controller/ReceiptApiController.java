@@ -10,6 +10,7 @@ import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptResponse;
 import com.huoxiaolu.manger.mangerbackend.application.service.ReceiptService;
 import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,16 +25,19 @@ public class ReceiptApiController implements ReceiptApi {
     private final ReceiptService receiptService;
 
     @Override
+    @PostMapping("/receipt/create")
     public ReceiptResponse createReceipt(ReceiptCreateRequest request) {
         return receiptService.createReceipt(request);
     }
 
     @Override
+    @PostMapping("/receipt/list")
     public PageInfo<ReceiptListResponse> queryReceiptList(ReceiptQueryRequest request) {
         return receiptService.queryReceiptList(request);
     }
 
     @Override
+    @PostMapping("/receipt/update")
     public ReceiptResponse updateReceipt(ReceiptUpdateRequest request) {
         return receiptService.updateReceipt(request);
     }

@@ -1,6 +1,5 @@
 package com.huoxiaolu.manger.mangerbackend.api.interfaces;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.github.pagehelper.PageInfo;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptCreateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptQueryRequest;
@@ -8,15 +7,13 @@ import com.huoxiaolu.manger.mangerbackend.api.request.ReceiptUpdateRequest;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptListResponse;
 import com.huoxiaolu.manger.mangerbackend.api.response.ReceiptResponse;
 import jakarta.validation.Valid;
-import java.time.LocalDateTime;
-import org.springframework.data.repository.query.Param;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * @author xiaolu.huo
  */
+@RequestMapping
 public interface ReceiptApi {
     /**
      * 创建一个存款单
