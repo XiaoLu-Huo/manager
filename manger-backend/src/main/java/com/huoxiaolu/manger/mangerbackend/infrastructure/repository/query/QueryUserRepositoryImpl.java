@@ -24,6 +24,7 @@ public class QueryUserRepositoryImpl implements QueryUserRepository {
     @Override
     public PageInfo<UserListResponse> queryUserList(UserQueryRequest request) {
         Page<UserListResponse> page = startPage(request.getPageNumber(), request.getPageSize())
+                .setOrderBy("code desc")
                 .doSelectPage(() -> userMapper.pageUserInfoList(request));
        return warpPage(page);
     }

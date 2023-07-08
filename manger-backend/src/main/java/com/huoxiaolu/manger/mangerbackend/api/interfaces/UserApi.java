@@ -30,7 +30,7 @@ public interface UserApi {
      * @param request 分页查询参数
      * @return 查询的结果
      */
-    @GetMapping("/user/list")
+    @PostMapping("/user/list")
     PageInfo<UserListResponse> queryUserList(@RequestBody UserQueryRequest request);
 
     /**
