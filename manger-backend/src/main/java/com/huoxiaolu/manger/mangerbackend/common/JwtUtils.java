@@ -14,7 +14,7 @@ public class JwtUtils {
 
   private static final String SECRET_KEY = "managerBackend";
 
-  private static final long EXPIRATION = 604800;
+  private static final long EXPIRATION = 3600L;
 
   /**
    *   生成token

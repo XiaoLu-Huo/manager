@@ -27,6 +27,16 @@ public class GlobalExceptionAdvice {
         return exceptionResponse;
     }
 
+    @ExceptionHandler(LoginBusinessException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ExceptionResponse handlerError(LoginBusinessException e) {
+        log.error("业务异常: ", e);
+        ExceptionResponse exceptionResponse = new ExceptionResponse();
+        exceptionResponse.setErrorCode(e.getErrorCode());
+        exceptionResponse.setMessage(e.getMessage());
+        return exceptionResponse;
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ExceptionResponse handlerError(MethodArgumentNotValidException e) {

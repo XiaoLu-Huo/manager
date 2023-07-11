@@ -8,7 +8,7 @@ import com.huoxiaolu.manger.mangerbackend.shared.enums.LoginErrorCode;
  */
 public class LoginBusinessException extends BaseException {
 
-    public LoginBusinessException(LoginErrorCode loginErroeCode) {
-        super(loginErroeCode.name(), loginErroeCode.getMessage());
+    public LoginBusinessException(LoginErrorCode loginErrorCode) {
+        super(loginErrorCode.name(), loginErrorCode.getMessage());
     }
 }
